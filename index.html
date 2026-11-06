@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>LoveGoBuy spreadsheet : sélection, tailles et guide d’achat</title>
+<meta name="description" content="Explorez LoveGoBuy spreadsheet en français : catégories mode, conseils de taille, lecture des photos QC et méthode pour comparer les liens et le coût total.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#312137">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="LoveGoBuy spreadsheet — Le carnet des choix éclairés">
+<meta property="og:description" content="Une méthode simple pour repérer une pièce, vérifier ses mesures et préparer une sélection cohérente avant l’achat.">
+<meta property="og:image" content="https://si.geilicdn.com/open1862809525-1234478995-07a000000193d01b44ca0aa0834c_800_800.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://si.geilicdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://si.geilicdn.com">
+<!-- Ajouter une URL canonique propre à cette page après avoir défini son domaine de publication. -->
+<style>
+:root{
+  --paper:#f7f4ed;
+  --ink:#312137;
+  --soft:#625c65;
+  --line:#d8d2cc;
+  --lime:#d8ef8a;
+  --white:#fff;
+  --rose:#e8d8dc
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65
+}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{
+  outline:3px solid #704a83;
+  outline-offset:5px
+}
+img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#eeeae4
+}
+p,h1,h2,h3,figure{margin:0}
+p+p{margin-top:12px}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+.top{
+  background:var(--ink);
+  color:var(--paper);
+  font-size:.75rem;
+  letter-spacing:.1em;
+  padding:9px 20px;
+  text-align:center
+}
+.mast{
+  padding:24px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  border-bottom:1px solid var(--line)
+}
+.brand{
+  font-size:1.16rem;
+  font-weight:850;
+  letter-spacing:-.045em
+}
+.brand small{
+  display:block;
+  font-size:.67rem;
+  letter-spacing:.13em;
+  font-weight:500
+}
+.mast-link{font-size:.85rem;font-weight:650}
+.eyebrow{
+  font-size:.72rem;
+  font-weight:750;
+  letter-spacing:.13em;
+  text-transform:uppercase
+}
+.categories{padding:23px 0 30px}
+.cat-head{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:12px;
+  align-items:center
+}
+.muted{color:var(--soft)}
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border-left:1px solid var(--line);
+  border-top:1px solid var(--line)
+}
+.cat-grid a{
+  padding:12px 13px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  font-size:.82rem;
+  font-weight:650;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:5px
+}
+.cat-grid a:hover{background:var(--lime);text-decoration:none}
+.cat-grid span{font-size:1.1rem}
+.hero{
+  display:grid;
+  grid-template-columns:1.12fr 1fr;
+  background:var(--ink);
+  color:var(--paper)
+}
+.hero-copy{
+  padding:46px 42px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center
+}
+.hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2.7rem,5.2vw,4.6rem);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.045em;
+  margin:18px 0 22px;
+  overflow-wrap:anywhere
+}
+.hero h1 em{color:var(--lime);font-style:normal}
+.hero p{max-width:48ch;color:#e4dce7}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  background:var(--lime);
+  color:var(--ink);
+  padding:13px 20px;
+  font-weight:750;
+  font-size:.86rem;
+  margin-top:24px;
+  border:1px solid transparent
+}
+.button:hover{background:#e3f6ac;text-decoration:none}
+.hero-visual{
+  background:#e8e7e3;
+  display:flex;
+  flex-direction:column
+}
+.hero-visual img{
+  aspect-ratio:1/1;
+  object-fit:contain;
+  flex:1;
+  min-height:0
+}
+.hero-visual figcaption{
+  padding:12px 18px;
+  background:#e8e7e3;
+  color:var(--ink);
+  font-size:.74rem
+}
+.answer{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:32px;
+  padding:29px 0;
+  border-bottom:1px solid var(--line)
+}
+.answer p{max-width:87ch}
+.section{padding:58px 0;border-bottom:1px solid var(--line)}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:25px
+}
+h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  line-height:1.15;
+  font-weight:400;
+  letter-spacing:-.025em
+}
+.section-head .eyebrow{margin-bottom:9px}
+.section-head>p{font-size:.88rem;max-width:36ch}
+.edit-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+.edit img{aspect-ratio:1/1;object-fit:contain}
+.edit figcaption{padding:17px 0}
+.edit h3{font-size:1.08rem;line-height:1.35;margin:5px 0 9px}
+.edit p{font-size:.87rem;color:var(--soft)}
+.text-link{
+  display:inline-block;
+  font-size:.85rem;
+  font-weight:750;
+  margin-top:12px
+}
+.ribbon{
+  padding:25px 30px;
+  background:var(--lime);
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:center;
+  margin-top:26px
+}
+.ribbon p{max-width:74ch;font-size:.9rem}
+.ribbon a{font-weight:750;white-space:nowrap;font-size:.85rem}
+.guide-grid{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:56px
+}
+.guide-intro p{font-size:.92rem;margin-top:17px;color:var(--soft)}
+.steps{padding:0;margin:0;list-style:none;counter-reset:steps}
+.steps li{
+  counter-increment:steps;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:15px;
+  padding:18px 0;
+  border-top:1px solid var(--line)
+}
+.steps li:before{
+  content:"0" counter(steps);
+  font-family:Georgia,serif;
+  font-size:1.45rem
+}
+.steps h3{font-size:1rem;margin-bottom:6px}
+.steps p{font-size:.9rem;color:var(--soft)}
+.table-wrap{overflow-x:auto;margin-top:28px}
+table{
+  border-collapse:collapse;
+  width:100%;
+  font-size:.88rem;
+  text-align:left
+}
+caption{text-align:left;font-weight:750;margin-bottom:12px}
+th,td{
+  border-bottom:1px solid var(--line);
+  padding:13px 15px;
+  vertical-align:top
+}
+th{background:#ebe6e9;font-weight:700}
+td:first-child{font-weight:650;min-width:140px}
+.journal{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px
+}
+.journal article{border-top:3px solid var(--ink);padding-top:18px}
+.journal .tag{font-size:.72rem;color:var(--soft)}
+.journal h3{
+  font-family:Georgia,serif;
+  font-size:1.45rem;
+  line-height:1.2;
+  font-weight:400;
+  margin:13px 0
+}
+.journal p{font-size:.9rem;color:var(--soft)}
+.journal strong{color:var(--ink)}
+.faq-grid{
+  display:grid;
+  grid-template-columns:.65fr 1.35fr;
+  gap:55px
+}
+details{border-bottom:1px solid var(--line)}
+summary{
+  cursor:pointer;
+  padding:19px 28px 19px 0;
+  font-weight:700;
+  font-size:.95rem
+}
+details p{
+  padding:0 0 20px;
+  color:var(--soft);
+  font-size:.9rem
+}
+.research{margin-top:32px}
+.research>summary{font-size:.85rem}
+.research-content{padding-bottom:24px}
+.research-content p{padding-bottom:12px}
+.queries{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px
+}
+.queries h3{font-size:.95rem}
+.queries ul{padding-left:19px;font-size:.85rem;color:var(--soft)}
+.method{font-size:.8rem;background:#eee9ec;padding:20px;margin-top:20px}
+.method p{font-size:.8rem}
+.source-list{
+  columns:2;
+  overflow-wrap:anywhere;
+  font-size:.78rem;
+  padding-left:20px
+}
+.closing{
+  padding:43px 35px;
+  background:var(--rose);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  margin:40px 0
+}
+.closing p{margin-top:9px;max-width:62ch;font-size:.9rem}
+.closing .button{margin:0;white-space:nowrap}
+footer{padding:0 0 30px;font-size:.76rem;color:var(--soft)}
+.foot-row{
+  display:flex;
+  justify-content:space-between;
+  gap:22px;
+  padding-bottom:16px
+}
+footer p{max-width:110ch}
+@media(min-width:900px){
+  .section{content-visibility:auto;contain-intrinsic-size:auto 650px}
+}
+@media(max-width:800px){
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr 1fr}
+  .hero-copy{padding:30px 24px}
+  .hero h1{font-size:2.7rem}
+  .hero p{font-size:.89rem}
+  .edit-grid{gap:14px}
+  .guide-grid,.faq-grid{grid-template-columns:1fr;gap:28px}
+  .journal{grid-template-columns:1fr}
+  .journal article{padding-bottom:10px}
+  .answer{grid-template-columns:1fr;gap:12px}
+  .ribbon{align-items:flex-start;flex-direction:column;gap:12px}
+  .closing{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 28px)}
+  .top{font-size:.65rem}
+  .mast{padding:19px 0}
+  .mast-link{font-size:.73rem}
+  .brand{font-size:1.05rem}
+  .cat-head .muted{display:none}
+  .cat-grid a{font-size:.76rem;padding:11px}
+  .hero{grid-template-columns:1fr}
+  .hero-copy{padding:32px 24px}
+  .hero h1{font-size:3.1rem}
+  .hero-visual img{
+    height:auto;
+    max-height:350px;
+    flex:none;
+    object-fit:contain
+  }
+  .section{padding:38px 0}
+  .section-head{display:block}
+  .section-head>p{margin-top:12px}
+  .edit-grid{grid-template-columns:1fr}
+  .edit{
+    display:grid;
+    grid-template-columns:.8fr 1fr;
+    gap:17px;
+    align-items:start
+  }
+  .edit figcaption{padding:0}
+  .edit h3{font-size:1rem}
+  .edit p{font-size:.81rem}
+  .edit .text-link{font-size:.79rem}
+  .queries{grid-template-columns:1fr;gap:10px}
+  .closing{padding:26px}
+  .source-list{columns:1}
+  .foot-row{flex-direction:column;gap:5px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "inLanguage": "fr",
+      "name": "LoveGoBuy spreadsheet : sélection, tailles et guide d’achat",
+      "description": "Un carnet indépendant pour comparer des liens de produits, vérifier les mesures, lire les photos QC et préparer un budget complet.",
+      "about": {
+        "@type": "Thing",
+        "name": "LoveGoBuy spreadsheet"
+      },
+      "keywords": [
+        "LoveGoBuy finds",
+        "guide LoveGoBuy en français",
+        "LoveGoBuy tailles et mesures",
+        "LoveGoBuy photos QC"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce qu’une LoveGoBuy spreadsheet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C’est une liste organisée de liens et de renseignements sur des produits, utilisée pour préparer une sélection. Une liste ne garantit ni la disponibilité, ni l’authenticité, ni la possibilité d’achat auprès d’un service donné."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on télécharger un fichier Excel sur cette page ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Cette page propose un guide et des accès aux catégories de HipobuyFind. Vous pouvez créer votre propre tableau avec les liens, variantes, mesures et dates de vérification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment choisir une taille de chaussures ou de vêtement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Utilisez les mesures de la fiche exacte. Pour les vêtements, comparez-les à une pièce que vous portez déjà. Pour les chaussures, vérifiez le système de pointures et ce que mesure la valeur en centimètres : pied ou semelle intérieure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les photos QC prouvent-elles l’authenticité ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Les photos QC peuvent montrer la variante reçue, certains défauts visibles et des mesures si elles sont fournies. Elles ne prouvent pas à elles seules l’authenticité, la composition ou la durabilité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le prix d’un article comprend-il la livraison en France ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne le supposez pas. Vérifiez séparément le prix de la variante, le transport intérieur, les frais de service, la livraison internationale et les taxes ou frais applicables à votre destination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce site est-il un partenaire officiel de LoveGoBuy ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Ce guide est indépendant de LoveGoBuy et des marques citées. Les liens de découverte mènent à HipobuyFind ; les paiements, la livraison et les retours relèvent du vendeur ou du service choisi."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/yxtml/">
+</head>
+<body>
+<div class="top">LE CARNET MODE · EN FRANÇAIS · REPÉRER, MESURER, COMPARER</div>
+
+<header class="wrap mast">
+  <a class="brand" href="https://www.hipobuyfind.com">
+    hipobuyfind.com
+    <small>LE CARNET DES TROUVAILLES</small>
+  </a>
+  <a class="mast-link" href="https://www.hipobuyfind.com">Explorer le catalogue ↗</a>
+</header>
+
+<main class="wrap">
+  <nav class="categories" aria-label="Catégories de produits">
+    <div class="cat-head">
+      <p class="eyebrow">Votre premier arrêt : une catégorie</p>
+      <p class="muted" style="font-size:.78rem">Des pièces comparables, une recherche plus claire.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="https://hipobuyfind.com/category-911-Shoes.html">Chaussures <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Sweats / Pulls <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-914-Jackets.html">Vestes <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pantalons / Shorts <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-916-Headwear.html">Casquettes / Bonnets <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-917-Sets.html">Ensembles <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Sous-vêtements <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-919-Jersey.html">Maillots <span aria-hidden="true">↗</span></a>
+      <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+
+  <section class="hero" aria-labelledby="titre">
+    <div class="hero-copy">
+      <p class="eyebrow">Le dossier · Trouvailles &amp; méthode</p>
+      <h1 id="titre">LoveGoBuy<br><em>spreadsheet.</em><br>Du repérage<br>au bon choix.</h1>
+      <p>Une belle photo donne une idée. Une mesure, une variante précise et un coût complet permettent de décider. Préparez votre sélection avec ce guide indépendant.</p>
+      <a class="button" href="https://www.hipobuyfind.com">
+        Découvrir les pièces <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <figure class="hero-visual">
+      <img
+        src="https://si.geilicdn.com/open1862809525-1234478995-07a000000193d01b44ca0aa0834c_800_800.jpg"
+        width="800"
+        height="800"
+        fetchpriority="high"
+        decoding="async"
+        alt="Veste à capuche présentée sous le nom Nike Sportswear Tech Fleece dans le catalogue">
+      <figcaption>01 / Vêtement technique : vérifier la coupe, les poches et les mesures de la variante.</figcaption>
+    </figure>
+  </section>
+
+  <div class="answer">
+    <p class="eyebrow">La réponse directe</p>
+    <p><strong>Une LoveGoBuy spreadsheet est une liste structurée de liens de produits et de notes de comparaison.</strong> Elle aide à retrouver une référence, une taille ou une variante. Ce carnet explique comment l’utiliser ; les catégories ouvrent HipobuyFind, sans garantir la compatibilité d’un article avec LoveGoBuy.</p>
+  </div>
+
+  <section class="section" aria-labelledby="selection">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">01 / Lire une pièce</p>
+        <h2 id="selection">Le détail avant le logo.</h2>
+      </div>
+      <p class="muted">Visuels de repérage issus du catalogue. Les noms des marques identifient les références annoncées, sans certification d’authenticité.</p>
+    </div>
+
+    <div class="edit-grid">
+      <figure class="edit">
+        <a href="https://www.hipobuyfind.com" aria-label="Explorer le catalogue à partir du sac à motif multicolore">
+          <img
+            src="https://si.geilicdn.com/open1648936853-1234478995-7f0b000001975f2be0b80a231226-unadjust_571_581.png"
+            width="571"
+            height="581"
+            loading="lazy"
+            decoding="async"
+            alt="Sac à motif monogramme multicolore et chaîne, présenté comme Louis Vuitton">
+        </a>
+        <figcaption>
+          <p class="eyebrow">Volume &amp; porté</p>
+          <h3>Un sac, plusieurs proportions</h3>
+          <p>Relevez largeur, hauteur et longueur de chaîne. Une photo seule ne dit pas si votre téléphone et vos essentiels tiennent ensemble.</p>
+          <a class="text-link" href="https://www.hipobuyfind.com">Comparer les détails ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="edit">
+        <a href="https://www.hipobuyfind.com" aria-label="Explorer le catalogue à partir du cabas à motif">
+          <img
+            src="https://si.geilicdn.com/open1623462477-1234478995-25080000019744b0f6d80a231226_1200_1200.jpg"
+            width="1200"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+            alt="Cabas à motif monogramme présenté comme Dior Book Tote">
+        </a>
+        <figcaption>
+          <p class="eyebrow">Motif &amp; construction</p>
+          <h3>Observer au-delà de la façade</h3>
+          <p>Comparez les anses, le fond et l’intérieur. Demandez la matière déclarée : un motif reconnaissable ne renseigne pas sur la composition.</p>
+          <a class="text-link" href="https://www.hipobuyfind.com">Examiner les références ↗</a>
+        </figcaption>
+      </figure>
+
+      <figure class="edit">
+        <a href="https://www.hipobuyfind.com" aria-label="Explorer le catalogue à partir d’une ceinture à boucle en H">
+          <img
+            src="https://si.geilicdn.com/open1792148229-1234478995-403200000196e9827c180a23b491_2560_2560.jpg"
+            width="2560"
+            height="2560"
+            loading="lazy"
+            decoding="async"
+            alt="Ceinture noire texturée avec boucle argentée en forme de H">
+        </a>
+        <figcaption>
+          <p class="eyebrow">Longueur &amp; réglage</p>
+          <h3>La boucle ne suffit pas</h3>
+          <p>Pour une recherche Hermès ou une autre maison, confirmez la référence annoncée et la provenance. Mesurez surtout la distance utile jusqu’au trou porté.</p>
+          <a class="text-link" href="https://www.hipobuyfind.com">Parcourir les accessoires ↗</a>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="ribbon">
+      <p><strong>LoveGoBuy finds : gardez une sélection courte.</strong> Pour une basket Nike, un vêtement Gucci ou un accessoire Dior, commencez par le modèle et l’usage. Ajoutez ensuite la couleur et les mesures souhaitées.</p>
+      <a href="https://www.hipobuyfind.com">Ouvrir le catalogue ↗</a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="guide">
+    <div class="guide-grid">
+      <div class="guide-intro">
+        <p class="eyebrow">02 / Guide LoveGoBuy en français</p>
+        <h2 id="guide">Une liste qui aide vraiment à choisir.</h2>
+        <p>Une ligne utile doit permettre de retrouver exactement ce que vous avez comparé. Notez les informations manquantes plutôt que de les deviner.</p>
+        <p>Ce guide concerne la préparation de votre recherche. Vérifiez directement les conditions actuelles du vendeur et du service d’achat avant toute commande.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Commencer par une intention précise</h3>
+            <p>« Veste légère avec capuche » est un meilleur départ qu’une collection de marques. Choisissez une catégorie, puis comparez des pièces destinées au même usage.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Conserver le lien et la bonne variante</h3>
+            <p>Enregistrez la source, le vendeur, la couleur, la taille et la quantité. Deux annonces proches peuvent proposer des versions ou des contenus différents.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Résoudre les points inconnus</h3>
+            <p>Demandez les dimensions ou une vue manquante. Une annonce incomplète reste une piste, même si son titre correspond exactement à votre recherche.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Recontrôler avant de payer</h3>
+            <p>Relisez le prix de la variante, les modalités de retour et le devis de transport. Confirmez que le service choisi accepte le produit et sa destination.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Les colonnes utiles de votre tableau personnel</caption>
+        <thead>
+          <tr>
+            <th scope="col">Information</th>
+            <th scope="col">À conserver</th>
+            <th scope="col">Question à résoudre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Référence</td>
+            <td>Modèle, vendeur, lien source, variante</td>
+            <td>Le lien mène-t-il toujours au même article ?</td>
+          </tr>
+          <tr>
+            <td>Mesures</td>
+            <td>Valeurs en centimètres et méthode de mesure</td>
+            <td>La coupe convient-elle à une pièce de référence ?</td>
+          </tr>
+          <tr>
+            <td>Matière</td>
+            <td>Composition déclarée et détails visibles</td>
+            <td>Qu’est-ce qui est indiqué, et qu’est-ce qui reste inconnu ?</td>
+          </tr>
+          <tr>
+            <td>Budget</td>
+            <td>Article, livraison, service, taxes éventuelles</td>
+            <td>Quel total correspond à votre destination ?</td>
+          </tr>
+          <tr>
+            <td>Suivi</td>
+            <td>Date de consultation et conditions de retour</td>
+            <td>Que faut-il vérifier à nouveau avant la commande ?</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="articles">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">03 / Les articles du carnet</p>
+        <h2 id="articles">Trois lectures avant la sélection finale.</h2>
+      </div>
+      <p class="muted">Des repères pratiques, à appliquer à la fiche exacte que vous consultez.</p>
+    </div>
+
+    <div class="journal">
+      <article>
+        <p class="tag">DOSSIER TAILLES · CHAUSSURES &amp; VÊTEMENTS</p>
+        <h3>LoveGoBuy tailles et mesures : partir de votre vestiaire</h3>
+        <p>Posez à plat un sweat qui vous va. Mesurez sa largeur sous les aisselles, sa longueur et ses manches, puis comparez ces valeurs au tableau du vendeur. Une lettre M ou L ne décrit pas une coupe à elle seule.</p>
+        <p>Pour les baskets, distinguez longueur du pied et longueur intérieure. Vérifiez le système EU, US ou UK ainsi que les indications propres au modèle. <strong>Ne convertissez pas une pointure sans connaître l’échelle utilisée.</strong></p>
+      </article>
+
+      <article>
+        <p class="tag">DOSSIER PHOTOS · OBSERVER &amp; QUESTIONNER</p>
+        <h3>LoveGoBuy photos QC : lire ce que l’image montre</h3>
+        <p>QC signifie contrôle qualité. Lorsqu’un service propose des photos à réception, comparez la couleur commandée, les éléments inclus et les détails visibles. Une photo floue ou trop éloignée ne suffit pas pour examiner une couture.</p>
+        <p>Demandez une vue ciblée si un point compte dans votre décision : fermeture, semelle, étiquette ou mesure. <strong>Les images ne prouvent pas l’authenticité ni la résistance à l’usage.</strong> Consultez les conditions de retour avant l’expédition.</p>
+      </article>
+
+      <article>
+        <p class="tag">DOSSIER BUDGET · DU PRIX AU TOTAL</p>
+        <h3>Comparer les frais sans mélanger les devis</h3>
+        <p>Le prix affiché d’une pièce et son coût livré répondent à deux questions différentes. Relevez le prix de votre variante, puis le transport intérieur, les frais du service et l’acheminement international lorsqu’ils s’appliquent.</p>
+        <p>Pour comparer deux options, conservez la même destination et des hypothèses cohérentes de poids, volume et niveau de service. <strong>Pour la France comme pour une autre destination, vérifiez les taxes et les frais applicables.</strong> Aucun tarif de livraison n’est garanti ici.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq">
+    <div class="faq-grid">
+      <div>
+        <p class="eyebrow">04 / Réponses utiles</p>
+        <h2 id="faq">Avant d’ouvrir un nouveau lien.</h2>
+        <p class="muted" style="margin-top:16px;font-size:.9rem">Ce que le carnet permet de comprendre, et les vérifications à effectuer sur la fiche du produit.</p>
+      </div>
+
+      <div>
+        <details open>
+          <summary>Qu’est-ce qu’une LoveGoBuy spreadsheet ?</summary>
+          <p>C’est une liste organisée de liens et de renseignements sur des produits, utilisée pour préparer une sélection. Une liste ne garantit ni la disponibilité, ni l’authenticité, ni la possibilité d’achat auprès d’un service donné.</p>
+        </details>
+        <details>
+          <summary>Peut-on télécharger un fichier Excel sur cette page ?</summary>
+          <p>Non. Cette page propose un guide et des accès aux catégories de HipobuyFind. Vous pouvez créer votre propre tableau avec les liens, variantes, mesures et dates de vérification.</p>
+        </details>
+        <details>
+          <summary>Comment choisir une taille de chaussures ou de vêtement ?</summary>
+          <p>Utilisez les mesures de la fiche exacte. Pour les vêtements, comparez-les à une pièce que vous portez déjà. Pour les chaussures, vérifiez le système de pointures et ce que mesure la valeur en centimètres : pied ou semelle intérieure.</p>
+        </details>
+        <details>
+          <summary>Les photos QC prouvent-elles l’authenticité ?</summary>
+          <p>Non. Les photos QC peuvent montrer la variante reçue, certains défauts visibles et des mesures si elles sont fournies. Elles ne prouvent pas à elles seules l’authenticité, la composition ou la durabilité.</p>
+        </details>
+        <details>
+          <summary>Le prix d’un article comprend-il la livraison en France ?</summary>
+          <p>Ne le supposez pas. Vérifiez séparément le prix de la variante, le transport intérieur, les frais de service, la livraison internationale et les taxes ou frais applicables à votre destination.</p>
+        </details>
+        <details>
+          <summary>Ce site est-il un partenaire officiel de LoveGoBuy ?</summary>
+          <p>Non. Ce guide est indépendant de LoveGoBuy et des marques citées. Les liens de découverte mènent à HipobuyFind ; les paiements, la livraison et les retours relèvent du vendeur ou du service choisi.</p>
+        </details>
+      </div>
+    </div>
+
+    <details class="research">
+      <summary>Carnet de recherche : préciser votre demande</summary>
+      <div class="research-content">
+        <p>Ces formulations servent à cerner une question concrète. Choisissez celle qui correspond à votre besoin, puis vérifiez les informations sur la fiche source.</p>
+
+        <div class="queries">
+          <div>
+            <h3>Trouver une pièce adaptée</h3>
+            <ul>
+              <li>Comment utiliser LoveGoBuy spreadsheet en français ?</li>
+              <li>Comment retrouver le lien source d’une basket ?</li>
+              <li>Comment choisir un sweat selon sa coupe ?</li>
+              <li>Quels détails comparer sur une veste technique ?</li>
+              <li>Comment rechercher un maillot par modèle ?</li>
+              <li>Comment comparer deux ensembles de même taille ?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Comprendre les dimensions</h3>
+            <ul>
+              <li>Comment lire un tableau de tailles en centimètres ?</li>
+              <li>Quelle différence entre pointure EU et US ?</li>
+              <li>Comment mesurer la largeur d’un T-shirt ?</li>
+              <li>Comment comparer la longueur de deux pantalons ?</li>
+              <li>Comment vérifier le tour de tête d’une casquette ?</li>
+              <li>Quelle longueur utile relever sur une ceinture ?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Examiner les annonces et les photos</h3>
+            <ul>
+              <li>Que vérifier sur une photo QC de chaussures ?</li>
+              <li>Quelle vue demander pour inspecter une fermeture ?</li>
+              <li>Comment distinguer une variante et un autre modèle ?</li>
+              <li>Comment lire la composition d’un vêtement ?</li>
+              <li>Que faire si un lien produit ne fonctionne plus ?</li>
+              <li>Quelles informations conserver sur un vendeur ?</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Préparer le coût et le suivi</h3>
+            <ul>
+              <li>Quels frais ajouter au prix d’un article ?</li>
+              <li>Comment comparer un devis de livraison vers la France ?</li>
+              <li>Pourquoi le volume du colis influence-t-il un devis ?</li>
+              <li>Quand vérifier les conditions de retour ?</li>
+              <li>Comment noter la date de vérification d’un lien ?</li>
+              <li>Comment organiser une sélection dans un tableau personnel ?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="method">
+          <strong>Note sur la recherche éditoriale</strong>
+          <p>Recherche du 6 novembre 2026 autour de « LoveGoBuy spreadsheet ». L’accès direct à Google ayant été limité, les résultats d’un autre moteur ont servi à repérer dix domaines ; leur position sur la première page Google n’a pas été vérifiée. Les sujets observés concernent les catégories, les liens source, les mesures, les photos QC et la préparation d’une commande. Les textes de ce carnet sont originaux et ne reprennent pas les promesses commerciales des sites consultés.</p>
+          <ul class="source-list">
+            <li>lovegobuy.io — catégories et contexte des fiches</li>
+            <li>lovegobuy.cc — découvertes et parcours de sélection</li>
+            <li>sheetslovegobuy.com — classement et notes de comparaison</li>
+            <li>lovegobuy.net — recherche et choix d’une catégorie</li>
+            <li>lovego-buy.courses — colonnes d’un tableau personnel</li>
+            <li>lovegobuy.org — organisation et sélection de liens</li>
+            <li>lovegobuy.delivery — présentation de catégories et guides</li>
+            <li>lovegobuylinks.com — préparation des liens et budget</li>
+            <li>lovegobuyspreadsheetsx.com — tailles, matières et FAQ</li>
+            <li>lovegobuy.info — recherche par nom ou lien source</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <aside class="closing" aria-label="Poursuivre la découverte">
+    <div>
+      <p class="eyebrow">Votre prochaine étape</p>
+      <h2>Une catégorie. Quelques pièces. Un choix plus clair.</h2>
+      <p>Retrouvez les références sur HipobuyFind et gardez les mesures, la variante et le lien source à portée de main.</p>
+    </div>
+    <a class="button" href="https://www.hipobuyfind.com">Explorer HipobuyFind ↗</a>
+  </aside>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <strong>hipobuyfind.com · Le carnet des trouvailles</strong>
+    <span>Guide indépendant · Édition française · 2026</span>
+  </div>
+  <p>Les marques Nike, Louis Vuitton, Gucci, Hermès et Dior appartiennent à leurs titulaires respectifs. Leur mention n’implique aucun partenariat. Les images illustrent des références de catalogue et ne certifient ni authenticité, ni stock. Cette page ne prend pas de commande et ne fournit pas de fichier Excel à télécharger.</p>
+</footer>
+</body>
+</html>
